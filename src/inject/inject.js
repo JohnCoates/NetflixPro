@@ -1,28 +1,3 @@
-function embedExtensionStylesheet(filename) {
-	var embeddedStylesheet = document.createElement('link');
-	embeddedStylesheet.rel = "stylesheet";
-	embeddedStylesheet.type = "text/css";
-	embeddedStylesheet.href = chrome.extension.getURL(filename);
-	embeddedStylesheet.onload = function() {
-			// this.parentNode.removeChild(this);
-			console.log("loaded stylesheet!");
-	};
-	(document.head||document.documentElement).appendChild(embeddedStylesheet);
-}
-
-function embedExtensionScript(filename, onload) {
-	var embeddedScript = document.createElement('script');
-	embeddedScript.src = chrome.extension.getURL(filename);
-	embeddedScript.onload = function() {
-		// remove script from DOM. Script still functions the same.
-		this.parentNode.removeChild(this);
-		if (onload != undefined) {
-			onload();
-		}
-	};
-
-	(document.head||document.documentElement).appendChild(embeddedScript);
-}
 
 function injectEmbeddedScripts() {
 	embedExtensionScript('js/jquery/jquery.min.js', function () {
@@ -64,19 +39,6 @@ function insertRewindButton() {
 	}
 }
 
-function onDOMReady(block) {
-	chrome.extension.sendMessage({}, function(response) {
-		var readyStateCheckInterval = setInterval(function() {
-			if (document.readyState === "complete") {
-				clearInterval(readyStateCheckInterval);
-				if (block != undefined) {
-					block();
-				}
-			}
-		});
-	});
-}
-
 // on DOM ready
 var initFunction =
 function () {
@@ -94,7 +56,7 @@ function () {
 
 onDOMReady(initFunction);
 
-
+// global setting updated by storage sync and get closures
 var rewindButtonSetting = "10seconds";
 
 chrome.storage.sync.get({"rewindButton": "10seconds"}, function(data){
@@ -112,6 +74,4 @@ chrome.storage.onChanged.addListener(function(changes, areaName) {
 		rewindButtonSetting = changes.rewindButton.newValue;
 		updateRewindButton();
 	}
-	console.log("storage changed");
-	console.log(changes);
 });
