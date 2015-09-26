@@ -17,3 +17,7 @@ Glyph Viewer: http://www.pkmurphy.com.au/glyphviewer/?fontname=Andika-R.woff&Loc
   line-height: 1.1em;
   margin-right: 2px;
 }
+
+.nfp-hidden {
+  display: none !important;
+}
