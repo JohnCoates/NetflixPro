@@ -7,11 +7,13 @@ Glyph Viewer: http://www.pkmurphy.com.au/glyphviewer/?fontname=Andika-R.woff&Loc
   order: 2;
   border-left:0;
 }
+
 .icon-player-rewind10::before {
   content:'\e684';
   line-height: 1.1em;
   margin-right: 2px;
 }
+
 .icon-player-rewind30::before {
   content:'\e744';
   line-height: 1.1em;
