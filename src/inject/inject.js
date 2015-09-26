@@ -1,3 +1,15 @@
+function embedExtensionStylesheet(filename) {
+	var embeddedStylesheet = document.createElement('link');
+	embeddedStylesheet.rel = "stylesheet";
+	embeddedStylesheet.type = "text/css";
+	embeddedStylesheet.href = chrome.extension.getURL(filename);
+	embeddedStylesheet.onload = function() {
+			// this.parentNode.removeChild(this);
+			console.log("loaded stylesheet!");
+	};
+	(document.head||document.documentElement).appendChild(embeddedStylesheet);
+}
+
 function embedExtensionScript(filename, onload) {
 	var embeddedScript = document.createElement('script');
 	embeddedScript.src = chrome.extension.getURL(filename);
