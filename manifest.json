@@ -1,0 +1,39 @@
+{
+  "name": "Netflix+",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Adds a 10 second rewind button to Netflix player.",
+  "homepage_url": "http://github.com/JohnCoates/NetflixPlus",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "options_page": "src/options_custom/index.html",
+  "permissions": [
+    "storage",
+    "contentSettings",
+    "*://*.netflix.com/*"
+  ],
+  "web_accessible_resources": [
+    "js/jquery/jquery.min.js",
+    "src/embedded/embedded.js",
+    "css/embedded/embedded.css"
+  ],
+  "background": {
+    "scripts": ["src/background/background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.netflix.com/*"
+      ],
+      "js": [
+        "js/insq/insQ.js",
+        "js/jquery/jquery.min.js",
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}

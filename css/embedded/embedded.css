@@ -1,0 +1,19 @@
+/*
+Glyphs: https://assets.nflxext.com/ffe/siteui/fonts/nf-icon-v1-66.woff
+Glyph Viewer: http://www.pkmurphy.com.au/glyphviewer/?fontname=Andika-R.woff&Location=Remote&fonturl=https%3A%2F%2Fassets.nflxext.com%2Fffe%2Fsiteui%2Ffonts%2Fnf-icon-v1-66.woff&shtables=shtables
+
+*/
+.icon-player-rewind10, .icon-player-rewind30 {
+  order: 2;
+  border-left:0;
+}
+.icon-player-rewind10::before {
+  content:'\e684';
+  line-height: 1.1em;
+  margin-right: 2px;
+}
+.icon-player-rewind30::before {
+  content:'\e744';
+  line-height: 1.1em;
+  margin-right: 2px;
+}
