@@ -18,12 +18,12 @@ function injectScript() {
 
 }
 
+// Adds or removes classes depending on what kind of rewind button
+// has been set in options
 function updateRewindButton() {
 	var rewindButton = rewindButtonSetting;
-	console.log("rewindButton: " + rewindButton);
 
 	if (rewindButton == "10seconds") {
-		console.log("inserting 10 seconds button!");
 		$NFP(".nfp-rewindButton").removeClass("nfp-hidden icon-player-rewind30").addClass("icon-player-rewind10");
 	}
 	else if (rewindButton == "30seconds") {
@@ -34,24 +34,22 @@ function updateRewindButton() {
 	}
 }
 
+// inserts a rewind button or placeholder into player
+// called when player has been added to DOM
 function insertRewindButton() {
 	var rewindButton = rewindButtonSetting;
 	console.log("rewindButton: " + rewindButton);
 
 	if (rewindButton == "10seconds") {
-		console.log("inserting 10 seconds button!");
 		$NFP(".player-play-pause").after("<div class='player-control-button nfp-rewindButton icon-player-rewind10'></div>");
 	}
 	else if (rewindButton == "30seconds") {
-		console.log("inserting 30 seconds button!");
 		$NFP(".player-play-pause").after("<div class='player-control-button nfp-rewindButton icon-player-rewind30'></div>");
 	}
 	else {
 		$NFP(".player-play-pause").after("<div class='player-control-button nfp-rewindButton nfp-hidden'></div>");
 	}
 }
-
-
 // load script
 chrome.extension.sendMessage({}, function(response) {
 	var readyStateCheckInterval = setInterval(function() {
