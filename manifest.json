@@ -30,7 +30,6 @@
         "*://*.netflix.com/*"
       ],
       "js": [
-        "js/insq/insQ.js",
         "js/jquery/jquery.min.js",
         "src/inject/inject.js"
       ]
