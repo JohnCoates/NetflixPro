@@ -63,42 +63,37 @@ function insertRewindButton() {
 		$NFP(".player-play-pause").after("<div class='player-control-button nfp-rewindButton nfp-hidden'></div>");
 	}
 }
-// load script
-chrome.extension.sendMessage({}, function(response) {
-	var readyStateCheckInterval = setInterval(function() {
-		if (document.readyState === "complete") {
-			injectEmbeddedScripts();
 
-			clearInterval(readyStateCheckInterval);
+function onDOMReady(block) {
+	chrome.extension.sendMessage({}, function(response) {
+		var readyStateCheckInterval = setInterval(function() {
+			if (document.readyState === "complete") {
+				clearInterval(readyStateCheckInterval);
+				if (block != undefined) {
+					block();
+				}
+			}
+		});
+	});
+}
 
-			// ----------------------------------------------------------
-			// This part of the script triggers when page is done loading
+// on DOM ready
+var initFunction =
+function () {
+	injectEmbeddedScripts();
 
+	// Embed css into page
+	embedExtensionStylesheet('css/embedded/embedded.css');
 
-			// Embed css into page
-			var embeddedStylesheet = document.createElement('link');
-			embeddedStylesheet.rel = "stylesheet";
-			embeddedStylesheet.type = "text/css";
-			embeddedStylesheet.href = chrome.extension.getURL('css/embedded/embedded.css');
-			embeddedStylesheet.onload = function() {
-			    // this.parentNode.removeChild(this);
-					console.log("loaded stylesheet!");
-			};
-			(document.head||document.documentElement).appendChild(embeddedStylesheet);
+	// As soon as player is added to DOM, add rewind button
+	$NFP(document).on("DOMNodeInserted", ".player-play-pause", function(event) {
+				insertRewindButton();
+	});
 
-			console.log("Hello. This message was sent from src/inject/inject.js");
+};
 
-		$NFP(document).on("DOMNodeInserted", ".player-play-pause", function(event) {
-				// insert rewind button after play/pause button
-				// chrome.storage.sync.get({"rewindButton": "10seconds"}, function(data){
-					// var rewindButton = data.rewindButton;
-					insertRewindButton();
-			});
-			// $(document).on("chang)
+onDOMReady(initFunction);
 
-		}
-	}, 10);
-});
 
 var rewindButtonSetting = "10seconds";
 
