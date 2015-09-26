@@ -1,21 +1,22 @@
-function injectScript() {
-	// Embed jQuery into page
+function embedExtensionScript(filename, onload) {
 	var embeddedScript = document.createElement('script');
-	embeddedScript.src = chrome.extension.getURL('js/jquery/jquery.min.js');
+	embeddedScript.src = chrome.extension.getURL(filename);
 	embeddedScript.onload = function() {
-			this.parentNode.removeChild(this);
-
-			// Embed script into page
-			var embeddedScript = document.createElement('script');
-			embeddedScript.src = chrome.extension.getURL('src/embedded/embedded.js');
-			embeddedScript.onload = function() {
-					this.parentNode.removeChild(this);
-			};
-			(document.head||document.documentElement).appendChild(embeddedScript);
+		// remove script from DOM. Script still functions the same.
+		this.parentNode.removeChild(this);
+		if (onload != undefined) {
+			onload();
+		}
 	};
+
 	(document.head||document.documentElement).appendChild(embeddedScript);
+}
 
-
+function injectEmbeddedScripts() {
+	embedExtensionScript('js/jquery/jquery.min.js', function () {
+		// embed NFP script after jquery loads so it's all ready for us
+		embedExtensionScript('src/embedded/embedded.js');
+	});
 }
 
 // Adds or removes classes depending on what kind of rewind button
@@ -54,7 +55,7 @@ function insertRewindButton() {
 chrome.extension.sendMessage({}, function(response) {
 	var readyStateCheckInterval = setInterval(function() {
 		if (document.readyState === "complete") {
-			injectScript();
+			injectEmbeddedScripts();
 
 			clearInterval(readyStateCheckInterval);
 
