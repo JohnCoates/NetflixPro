@@ -29,7 +29,8 @@ function insertRewindButton() {
 	console.log("rewindButton: " + rewindButton);
 
 	if (rewindButton == "10seconds") {
-		$NFP(".player-play-pause").after("<div class='player-control-button nfp-rewindButton icon-player-rewind10'></div>");
+		$NFP(".player-play-pause").after ("<div class='player-control-button nfp-rewindButton'><button value=\"rewind!\">rewind!</button></div>");
+		// $NFP(".player-play-pause").after("<div class='player-control-button nfp-rewindButton icon-player-rewind10'></div>");
 	}
 	else if (rewindButton == "30seconds") {
 		$NFP(".player-play-pause").after("<div class='player-control-button nfp-rewindButton icon-player-rewind30'></div>");
