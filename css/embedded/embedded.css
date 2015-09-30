@@ -7,38 +7,7 @@ Glyph Viewer: http://www.pkmurphy.com.au/glyphviewer/?fontname=Andika-R.woff&Loc
 .nfp-rewindButton {
   order: 2;
   border-left:0;
-  width: 3em !important;
 }
-
-.nfp-rewindButton button {
-  all:initial;
-  align-items: flex-start;
-  text-align: center;
-  cursor: default;
-  color: buttontext;
-  padding: 2px 6px 3px;
-  border-radius: 20px;
-  border: 2px outset buttonface;
-  border-image-source: initial;
-  border-image-slice: initial;
-  border-image-width: initial;
-  border-image-outset: initial;
-  border-image-repeat: initial;
-  background-color: buttonface;
-  box-sizing: border-box;
-  margin: 0em;
-font: 20px BlinkMacSystemFont;
-text-rendering: auto;
-letter-spacing: normal;
-word-spacing: normal;
-text-transform: none;
-text-indent: 0px;
-text-shadow: none;
-display: inline-block;
--webkit-appearance: button;
-    -webkit-writing-mode: horizontal-tb;
-}
-
 
 .icon-player-rewind10::before {
   content:'\e684';
