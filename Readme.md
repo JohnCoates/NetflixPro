@@ -1,9 +1,9 @@
 ## Netflix Pro
-Netflix Pro is a Chrome Extension that adds a quick rewind button to the Netflix player. A total UI makeover for the Netflix player is planned. Feel free to contribute!
+Netflix Pro is a Chrome Extension that adds a quick rewind button to the Netflix player. A total UI makeover for the Netflix player is planned. Feel free to contribute to the project!
 
 ## Screenshot
 
-![Screenshot](https://raw.githubusercontent.com/johncoates/NetflixPro/master/screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/johncoates/NetflixPro/master/screenshot.jpg)
 
 ## Download
 Download & Install the extension from the Chrome Web Store: https://chrome.google.com/webstore/detail/netflix-pro/gbaeiigcklneibgehhpjdbhgjdljfejp
