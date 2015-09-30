@@ -1,6 +1,6 @@
 // SAMPLE
 this.manifest = {
-    "name": "Netflix+",
+    "name": "Netflix Pro",
     "icon": "icon.png",
     "settings": [
       {

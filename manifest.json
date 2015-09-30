@@ -1,9 +1,9 @@
 {
-  "name": "Netflix+",
+  "name": "Netflix Pro",
   "version": "1.0",
   "manifest_version": 2,
   "description": "Adds a 10 second quick-rewind button to Netflix.",
-  "homepage_url": "http://github.com/JohnCoates/NetflixPlus",
+  "homepage_url": "http://github.com/JohnCoates/NetflixPro",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
