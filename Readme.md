@@ -21,3 +21,6 @@ Download & Install the extension from the Chrome Web Store: https://chrome.googl
 ## Changelog
 
 - September 30th, 2015 - 1.0: first release
+
+## License
+[MIT License](https://raw.githubusercontent.com/johncoates/NetflixPro/master/LICENSE)
