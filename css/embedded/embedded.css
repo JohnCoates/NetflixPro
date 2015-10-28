@@ -95,11 +95,12 @@ Glyph Viewer: http://www.pkmurphy.com.au/glyphviewer/?fontname=Andika-R.woff&Loc
 	border-left:0;
 	padding: 0.9em 2em;
 	font-size: 0.7em;
+	line-height: 4em;
 }
 
 #netflix-player .player-controls-wrapper .player-control-bar .player-control-button:before{
 	background: white;
 	-webkit-background-clip: text;
 	color: transparent;
-	font-size: 22px;
+	font-size: 0.7em;
 }
