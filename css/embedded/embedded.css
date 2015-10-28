@@ -24,3 +24,82 @@ Glyph Viewer: http://www.pkmurphy.com.au/glyphviewer/?fontname=Andika-R.woff&Loc
 .nfp-hidden {
   display: none !important;
 }
+
+#netflix-player .player-controls-wrapper{
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+
+#netflix-player .player-controls-wrapper .player-slider{
+	top: 2.17em;
+	z-index:50;
+}
+
+#netflix-player .player-controls-wrapper .player-slider label{
+	bottom: 2em;
+	right: 0.8em;
+	font-size: 150%;
+	position: absolute;
+}
+
+
+#netflix-player .player-controls-wrapper .player-slider #scrubber-component .player-scrubber-progress{
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	height: 1em;
+	box-shadow: none;
+}
+
+#netflix-player .player-controls-wrapper .player-slider #scrubber-component .player-scrubber-progress .player-scrubber-progress-buffered{
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+
+#netflix-player .player-controls-wrapper .player-slider #scrubber-component .player-scrubber-progress .player-scrubber-progress-completed{
+	background: #bf1315;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+#netflix-player .player-controls-wrapper .player-slider #scrubber-component .player-scrubber-target{
+	top: -0.7em;
+}
+
+#netflix-player .player-controls-wrapper .player-slider #scrubber-component .player-scrubber-target .player-scrubber-handle{
+	background: #bf1315;
+	box-shadow: none;
+	width: 5px;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+/* bar */
+#netflix-player .player-controls-wrapper .player-control-bar{
+	box-shadow: none;
+	height: 4em;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+#netflix-player .player-controls-wrapper .player-control-bar .player-control-button{
+	border-left:0;
+}
+
+#netflix-player .player-controls-wrapper .player-control-bar .player-status{
+	border-left:0;
+	padding: 0.9em 2em;
+	font-size: 0.7em;
+}
+
+#netflix-player .player-controls-wrapper .player-control-bar .player-control-button:before{
+	background: white;
+	-webkit-background-clip: text;
+	color: transparent;
+	font-size: 22px;
+}
